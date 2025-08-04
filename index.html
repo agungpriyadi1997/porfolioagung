@@ -580,6 +580,22 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+  function sendToWhatsApp() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    const fullMessage = `Halo, saya ${name} (${email}) ingin menghubungi Anda.\n\nSubject: ${subject}\nPesan: ${message}`;
+    const phoneNumber = "6285714309386"; // Ganti ke nomor WA tujuan
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
+    window.open(url, '_blank');
+  }
+    </script>
+
 </body>
 
 </html>
